@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Limelight&family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap');
+
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+font-family: "crimson text";
+font-weight: 600;
+}
+
+
+
+.morphing {
+  position: relative;
+  font-size: 80px;
+  background-color: #000;
+  color: #fff;
+  height: 100vh;
+  width: 100%;
+  filter: contrast(25) blur(1px);
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.word {
+  position: absolute;
+  animation: word 6s infinite ease-in-out ;
+}
+  .word:nth-child(1){
+    animation-delay:-3s;
+  }
+  .word:nth-child(2){
+    animation-delay:-6s;
+  }
+
+  @keyframes word {
+    0%{
+      filter: blur(1em); opacity: 0;
+    }
+    31%,69% { 
+      filter: blur(0px); opacity: 1; 
+    }        
+    100% { 
+      filter: blur(1em); opacity: 0; 
+    }        
+  }
